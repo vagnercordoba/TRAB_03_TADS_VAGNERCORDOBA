@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	
+	<title>Trabalho AV2</title>
+
+	<meta charset="UTF-8" />
+	<meta name="description" content="Trabalho AV2" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="estilo.css">	
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/bootstrap-responsive.css" />
+	
+</head>
+
+<body>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="funcoes.js"></script>
+
+	<div class="container">
+		<div class="row-fluid">	
+		<!-- Campo do Nome -->
+		<div class="span6 cor1">
+			<label for="txtNome">Nome:</label>
+			<input class="row-fluid" name="nome" id="txtNome" type="text" placeholder="Nome completo:" onkeypress=" return soLetras()" onkeyup="maiusculas()">
+		</div>
+
+		<!-- Campo do CPF -->		
+		<div class="span6 cor1">
+			<label for="txtCpf">CPF:</label>
+			<input class="row-fluid" name="cpf" id="txtCpf" type="text" placeholder="Digite seu Cpf:" maxlength="11" onkeypress="return soNumero()">
+		</div>
+		</div>
+
+		<!-- Campo do Endereço -->
+		<div class="row-fluid">
+			<div class="span12 cor1">
+			<label for="txtEndereco">Endereço:</label>
+				<input class="row-fluid" name="endereco" id="txtEndereco" type="text" placeholder="Endereço completo:" onkeyup="maiusculas()">
+			</div>
+		</div>
+
+		<!-- Campo do Cidade -->
+		<div class="row-fluid">
+			<div class="span6 cor1">
+			<label for="txtCidade">Cidade:</label>
+				<input class="row-fluid" name="cidade" id="txtCidade" type="text" placeholder="Cidade:" onkeyup="maiusculas()">
+			</div>
+			<!-- Campo do Telefone -->
+			<div class="span6 cor1">
+				<label for="txtTelefone">Telefone:</label>
+				<input class="row-fluid" type="text" name="telefone" id="txtTelefone" placeholder="Telefone">	
+			</div>
+		</div>			
+
+		<!-- Campo do Email -->
+		<div class="row-fluid">
+			<div class="span6 cor1">
+				<label for="txtEmail">Email:</label>
+				<form method="post" action="" onSubmit="return verificaCamposEmail()" name="frmEnvia">
+				<input class="row-fluid" name="email" type="text" class="input" id="txtEmail" onkeypress="return minusculas()" onblur="checarEmail();" placeholder="Digite seu email" />
+				</form>
+			</div>
+			<!-- Campo de Senha -->
+			<div class="span6 cor1">
+				<label for="pwdSenha">Senha:</label>
+				<input class="row-fluid" type="password" name="senha" id="pwdSenha" size="30" onblur="checarSenha()" placeholder="Digite sua senha">
+			</div>
+		</div>		
+
+		<!-- Campo Sexo -->
+		<div class="row-fluid">
+			<div class="span12 cor1">
+				<label for="sltSexo"></label>
+				<select class="form-control" id="sltSexo">
+					<option value="Escolher Sexo">Escolher Sexo</option>
+					<option value="Masculino">Masculino</option>
+					<option value="Feminino">Feminino</option>
+				</select>
+			</div>
+		</div>	
+
+		<!-- Campo Receber Promoção -->
+		<div class="row-fluid">
+			<div class="span12 cor1">
+				<label>Deseja receber promoção?</label>
+				<input type="checkbox" name="promocao" id="ckbSim" value="Receber_Promocao" checked onmousedown="msgReceberPromo()" />Sim<br />
+				<input type="checkbox" name="promocao" id="ckbNao" value="Nao_Receber_Promocao" />Não<br />
+			</div>
+		</div>
+
+		<!-- Campo de Observações -->
+		<div class="row-fluid">
+			<div class="span12 cor1">
+				<label for="txaObs">Observações:</label>
+				<textarea class="row-fluid" rows="8" cols="140" name="Obs" id="txaObs" onkeyup="maiusculas()" onblur="contarCaracter()"></textarea>
+			</div>
+		</div>
+
+		<!-- Botões -->
+		<div class="span12 btn-group cor1">
+			<button class="btn" type="button" onclick="validar()">Enviar</button>
+			<button class="btn" type="button" onclick="validar()">Valores</button>
+		</div>
+	</div>	
+</body>
+</html>
